@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Irwandika Malik | Robotics & IoT Engineer</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-950 text-white font-sans">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full top-0 bg-black/50 backdrop-blur z-50">
+      <div class="max-w-6xl mx-auto flex justify-between p-4">
+        <h1 class="font-bold">Irwandika</h1>
+        <div class="space-x-4">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+      class="h-screen flex flex-col justify-center items-center text-center"
+    >
+      <h1 class="text-5xl font-bold mb-4">Irwandika Malik</h1>
+      <p id="typing" class="text-xl text-gray-300"></p>
+      <button
+        onclick="scrollToSection('projects')"
+        class="mt-6 px-6 py-3 bg-blue-600 rounded-xl hover:bg-blue-700"
+      >
+        Lihat Project
+      </button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 px-8 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Tentang Saya</h2>
+      <p class="text-gray-400 leading-relaxed">
+        Fresh graduate Teknik Elektro dengan spesialisasi pada robotika dan
+        sistem embedded, berpengalaman dalam pengembangan sistem berbasis ROS,
+        komunikasi real-time (UDP) antara mikrokontroler STM32 dan ROS, serta
+        integrasi sensor, dan sistem IoT berbasis website. Memiliki pemahaman
+        yang baik dalam kontrol instrumen dan jaringan, serta siap berkontribusi
+        dalam pengembangan sistem otomasi dan teknologi berbasis IoT/robotik.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 px-8 bg-gray-900">
+      <h2 class="text-3xl font-bold mb-10 text-center">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="glass p-4 rounded-xl text-center">C++</div>
+        <div class="glass p-4 rounded-xl text-center">Python</div>
+        <div class="glass p-4 rounded-xl text-center">ROS</div>
+        <div class="glass p-4 rounded-xl text-center">STM32</div>
+        <div class="glass p-4 rounded-xl text-center">FreeRTOS</div>
+        <div class="glass p-4 rounded-xl text-center">MQTT</div>
+        <div class="glass p-4 rounded-xl text-center">Node-RED</div>
+        <div class="glass p-4 rounded-xl text-center">Computer Vision</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 px-8">
+      <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+          <h3 class="text-xl font-semibold">Robot 4 Omniwheel</h3>
+          <p class="text-gray-400 mt-2">
+            Odometry + EKF + kontrol berbasis ROS.
+          </p>
+          <button onclick="openModal('robot')" class="mt-4 text-blue-400">
+            Detail
+          </button>
+        </div>
+
+        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+          <h3 class="text-xl font-semibold">UDP STM32 ↔ ROS</h3>
+          <p class="text-gray-400 mt-2">Low latency communication system.</p>
+          <button onclick="openModal('udp')" class="mt-4 text-blue-400">
+            Detail
+          </button>
+        </div>
+
+        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+          <h3 class="text-xl font-semibold">Smart Hydroponic</h3>
+          <p class="text-gray-400 mt-2">Monitoring pH, TDS, suhu via MQTT.</p>
+          <button onclick="openModal('iot')" class="mt-4 text-blue-400">
+            Detail
+          </button>
+        </div>
+
+        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+          <h3 class="text-xl font-semibold">YOLOv8 Monitoring</h3>
+          <p class="text-gray-400 mt-2">Object detection + web dashboard.</p>
+          <button onclick="openModal('yolo')" class="mt-4 text-blue-400">
+            Detail
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/80 hidden flex items-center justify-center"
+    >
+      <div class="bg-gray-900 p-8 rounded-xl max-w-lg">
+        <h3 id="modal-title" class="text-xl font-bold mb-4"></h3>
+        <p id="modal-desc" class="text-gray-400"></p>
+        <button
+          onclick="closeModal()"
+          class="mt-6 bg-red-500 px-4 py-2 rounded"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 px-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <p class="text-gray-400">Email: irwandika@email.com</p>
+      <p class="text-gray-400">GitHub: github.com/username</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-gray-500">
+      © 2026 Irwandika Malik
+    </footer>
+  </body>
+</html>
