@@ -7,16 +7,16 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+  <script src="script.js"></script>
   <body class="bg-gray-950 text-white font-sans">
     <!-- NAVBAR -->
     <nav class="fixed w-full top-0 bg-black/50 backdrop-blur z-50">
       <div class="max-w-6xl mx-auto flex justify-between p-4">
-        <h1 class="font-bold">Irwandika</h1>
+        <h1 class="font-bold">MY PORTOFOLIO</h1>
         <div class="space-x-4">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -30,11 +30,7 @@
     <section
       class="h-screen flex flex-col justify-center items-center text-center"
     >
-      <img
-        src="assets/profile.jpg"
-        alt="Profile Picture"
-        class="w-40 h-40 rounded-full mb-6 border-4 border-blue-600"
-      />
+      <img src="assets/profile.jpg" class="profile-img" />
       <h1 class="text-5xl font-bold mb-4">Irwandika Malik</h1>
       <p id="typing" class="text-xl text-gray-300"></p>
       <button
@@ -61,15 +57,59 @@
     <!-- SKILLS -->
     <section id="skills" class="py-20 px-8 bg-gray-900">
       <h2 class="text-3xl font-bold mb-10 text-center">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        <div class="glass p-4 rounded-xl text-center">C++</div>
-        <div class="glass p-4 rounded-xl text-center">Python</div>
-        <div class="glass p-4 rounded-xl text-center">ROS</div>
-        <div class="glass p-4 rounded-xl text-center">STM32</div>
-        <div class="glass p-4 rounded-xl text-center">FreeRTOS</div>
-        <div class="glass p-4 rounded-xl text-center">MQTT</div>
-        <div class="glass p-4 rounded-xl text-center">Node-RED</div>
-        <div class="glass p-4 rounded-xl text-center">Computer Vision</div>
+
+      <div class="max-w-5xl mx-auto space-y-10">
+        <!-- Programming Languages -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-blue-400">
+            Programming Languages
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-xl text-center">C++</div>
+            <div class="glass p-4 rounded-xl text-center">Python</div>
+            <div class="glass p-4 rounded-xl text-center">HTML</div>
+            <div class="glass p-4 rounded-xl text-center">CSS</div>
+          </div>
+        </div>
+
+        <!-- Embedded Systems -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-blue-400">
+            Embedded Systems
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-xl text-center">STM32</div>
+            <div class="glass p-4 rounded-xl text-center">Arduino</div>
+            <div class="glass p-4 rounded-xl text-center">ESP32</div>
+            <div class="glass p-4 rounded-xl text-center">FreeRTOS</div>
+          </div>
+        </div>
+
+        <!-- Robotics & AI -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-blue-400">
+            Robotics & AI
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-xl text-center">ROS</div>
+            <div class="glass p-4 rounded-xl text-center">Computer Vision</div>
+            <div class="glass p-4 rounded-xl text-center">Machine Learning</div>
+            <div class="glass p-4 rounded-xl text-center">Yolo</div>
+          </div>
+        </div>
+
+        <!-- IoT & Communication -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-blue-400">
+            IoT & Communication
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-xl text-center">MQTT</div>
+            <div class="glass p-4 rounded-xl text-center">UDP</div>
+            <div class="glass p-4 rounded-xl text-center">mySQL</div>
+            <div class="glass p-4 rounded-xl text-center">Node-RED</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -78,7 +118,7 @@
       <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+        <div class="glass card">
           <h3 class="text-xl font-semibold">Robot 4 Omniwheel</h3>
           <p class="text-gray-400 mt-2">
             Odometry + EKF + kontrol berbasis ROS.
@@ -88,7 +128,7 @@
           </button>
         </div>
 
-        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+        <div class="glass card">
           <h3 class="text-xl font-semibold">UDP STM32 ↔ ROS</h3>
           <p class="text-gray-400 mt-2">Low latency communication system.</p>
           <button onclick="openModal('udp')" class="mt-4 text-blue-400">
@@ -96,7 +136,7 @@
           </button>
         </div>
 
-        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+        <div class="glass card">
           <h3 class="text-xl font-semibold">Smart Hydroponic</h3>
           <p class="text-gray-400 mt-2">Monitoring pH, TDS, suhu via MQTT.</p>
           <button onclick="openModal('iot')" class="mt-4 text-blue-400">
@@ -104,12 +144,51 @@
           </button>
         </div>
 
-        <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+        <div class="glass card">
           <h3 class="text-xl font-semibold">YOLOv8 Monitoring</h3>
           <p class="text-gray-400 mt-2">Object detection + web dashboard.</p>
           <button onclick="openModal('yolo')" class="mt-4 text-blue-400">
             Detail
           </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="py-20 px-8 bg-gray-900">
+      <h2 class="text-3xl font-bold mb-10 text-center">Certificates</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Certificate Card -->
+        <div class="glass card">
+          <img src="assets/certificates/cert1.jpg" class="cert-img" />
+          <h3 class="text-lg font-semibold mt-4">Machine Learning - Bangkit</h3>
+          <p class="text-gray-400 text-sm">Google, 2024</p>
+          <a
+            href="#"
+            target="_blank"
+            class="text-blue-400 text-sm mt-2 inline-block"
+          >
+            View Credential →
+          </a>
+        </div>
+
+        <div class="glass card">
+          <img src="assets/certificates/cert2.jpg" class="cert-img" />
+          <h3 class="text-lg font-semibold mt-4">ROS Robotics</h3>
+          <p class="text-gray-400 text-sm">Udemy</p>
+          <a href="#" class="text-blue-400 text-sm mt-2 inline-block">
+            View Credential →
+          </a>
+        </div>
+
+        <div class="glass card">
+          <img src="assets/certificates/cert3.jpg" class="cert-img" />
+          <h3 class="text-lg font-semibold mt-4">IoT Development</h3>
+          <p class="text-gray-400 text-sm">Dicoding</p>
+          <a href="#" class="text-blue-400 text-sm mt-2 inline-block">
+            View Credential →
+          </a>
         </div>
       </div>
     </section>
@@ -150,7 +229,7 @@
           target="_blank"
           class="text-blue-400 hover:underline"
         >
-          github.com/irwandikamalik
+          irwandikamalik
         </a>
       </p>
       <p class="text-gray-400">
@@ -160,7 +239,7 @@
           target="_blank"
           class="text-blue-400 hover:underline"
         >
-          linkedin.com/in/irwandika
+          irwandika
         </a>
       </p>
       <p class="text-gray-400">
@@ -170,7 +249,7 @@
           target="_blank"
           class="text-blue-400 hover:underline"
         >
-          instagram.com/irwandikamalik_
+          irwandikamalik_
         </a>
       </p>
     </section>
